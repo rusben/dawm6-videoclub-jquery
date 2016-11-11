@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html ng-app="VideoClubApp" xmlns="http://www.w3.org/1999/html" >
+<head lang="en">
+		<!--General-->
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<link rel="shortcut icon" HREF="images/companyLogo.jpg"/>
+		<title>Videoclub</title>
+		<meta name="description" content="Test module MF6">
+		<meta name="author" content="Robert Plana">
+
+		<!--css-->
+		<link href="css/bootstrap/bootstrap.css" rel="stylesheet" type="text/css"/>
+		<link href="css/index.css" rel="stylesheet" type="text/css"/>
+
+		<!--Frameworks-->
+			<!--JQuery-->
+			<script src="js/frameworks/jQuery/jQuery.js" type="text/javascript" xml:space="preserve"></script>
+			<!--<script src="http://code.jquery.com/jquery-1.11.3.min.js" type="text/javascript" xml:space="preserve"></script>
+			<script src="http://code.jquery.com/jquery-latest.js" type="text/javascript" xml:space="preserve"></script>-->
+
+			<!--Angular-->
+			<script src="js/frameworks/angular/angular.min.js" type="text/javascript" xml:space="preserve"></script>
+			<script src="js/frameworks/angular/i18n/angular-locale_es-es.js" type="text/javascript" xml:space="preserve"></script>
+			<script src="js/frameworks/angular/ng-currency.js" type="text/javascript" xml:space="preserve"></script>
+
+		<!--Own code-->
+		<script src="js/control/index.js" type="text/javascript" xml:space="preserve"></script>
+</head>
+<body>
+	<div class="container" style="margin:0 auto;">
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="container-fluid">
+			  <div class="navbar-header">
+					<span class="navbar-brand" id="title">Welcome to the videoclub "The universe of movies"</span>
+			  </div>
+			</div>
+		</nav>
+
+		<div class="row">
+			<div class="col-md-4"  id="sounddiv">
+					<img id="logoImg" src="images/companyLogo.jpg" />
+			</div>
+
+			<div class="col-md-4" style="width:600px;">
+				<nav class="navbar navbar-default">
+					<div class="container-fluid">
+					  <div class="navbar-header">
+						<span class="navbar-brand">Films management</span>
+					  </div>
+					</div>
+				</nav>
+			</div>
+			<div ng-controller="FilmEntryController as FilmEntryCtrl" class="col-md-4" style="width:600px;">
+				<div id="principal" class="col-md-4" style="width:600px; background-color: #c0c0c0;" >
+					<div class="form-group"><br/>
+						<label class="control-label">Films Entry: select the film type you want to introduce in our database</label>
+					</div>
+					<select ng-model="FilmEntryCtrl.filmType" class="form-control" id="furnitureType">
+							<option value="Comedy" selected>Comedy </option>
+							<option value="Terror">Terror </option>
+							<option value="Drama">Drama</option>
+							<option value="Thriller">Thriller</option>
+					</select>
+          <!-- angularjs expression -->
+          <div><strong>{{ FilmEntryCtrl.filmType }}</strong></div>
+					<div class="form-group" id="inputError"><br/>
+						<label class="control-label">Introduce the number of films to introduce</label>
+						<input ng-model="FilmEntryCtrl.filmsNumber" type="text" class="form-control" id="filmsNumber" min="1" placeholder="1"/>
+            <!-- angularjs expression -->
+            <div><strong>{{ FilmEntryCtrl.filmsNumber }}</strong></div>
+					</div>
+					<button ng-click="FilmEntryCtrl.generateForm()" class="btn btn-primary" id="generateForm">Generate form</button>
+				</div>
+				<br/>
+				<br/>
+				<div class="col-md-4" style="width:600px; background-color: #c0c0c0;" id="speciesData">
+            <film-entry-form></film-entry-form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

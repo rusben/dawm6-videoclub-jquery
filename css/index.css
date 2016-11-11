@@ -1,0 +1,41 @@
+body{
+
+    background-color: #142f5e;
+    font-family: Verdana;
+    color: #b6a414;
+}
+
+
+#mainMenu  {
+
+    float:left;
+    border:0;
+    width:40%;
+    background-color: #2e475e;
+    color: #b6a414;
+
+
+}
+
+#management {
+
+    float:left;
+    width:60%;
+    background-color: #2e475e;
+    color: #b6a414;
+
+}
+
+#foot {
+
+    background-color: #2e475e;
+    color: #b6a414;
+
+}
+
+.content {
+
+    background-color: #2e475e;
+    color: #b6a414;
+
+}
