@@ -1,3 +1,36 @@
 <h1>Film entry form</h1>
-<button class="btn btn-default">Back</button>
+
+<!-- film name, film director, price, available (checkbox) -->
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Film name</th>
+      <th>Film director</th>
+      <th>Price</th>
+      <th>Available</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr ng-repeat="i in FilmEntryCtrl.filmsNumber">
+        <td>
+          <input id="filmName" type="text" class="form-control" placeholder="Film name" />
+        </td>
+        <td>
+          <input id="filmDirector" type="text" class="form-control" placeholder="Film director" />
+        </td>
+        <td>
+          <input id="price" type="text" class="form-control" placeholder="Price" />
+        </td>
+        <td>
+          <div class="checkbox text-center">
+           <label>
+             <input id="available" type="checkbox" />
+           </label>
+          </div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+
+<button class="btn btn-default" ng-click="action = 0">Back</button>
 <button class="btn btn-primary">Entry films</button>

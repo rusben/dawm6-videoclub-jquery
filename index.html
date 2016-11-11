@@ -51,11 +51,12 @@
 				</nav>
 			</div>
 			<div ng-controller="FilmEntryController as FilmEntryCtrl" class="col-md-4" style="width:600px;">
-				<div id="principal" class="col-md-4" style="width:600px; background-color: #c0c0c0;" >
+        <!-- scope variables don't need the controller's name to work -->
+				<div id="principal" ng-show="action == 0" class="col-md-4" style="width:600px; background-color: #c0c0c0;" >
 					<div class="form-group"><br/>
 						<label class="control-label">Films Entry: select the film type you want to introduce in our database</label>
 					</div>
-					<select ng-model="FilmEntryCtrl.filmType" class="form-control" id="furnitureType">
+					<select id="filmType" ng-model="FilmEntryCtrl.filmType" class="form-control">
 							<option value="Comedy" selected>Comedy </option>
 							<option value="Terror">Terror </option>
 							<option value="Drama">Drama</option>
@@ -73,7 +74,7 @@
 				</div>
 				<br/>
 				<br/>
-				<div class="col-md-4" style="width:600px; background-color: #c0c0c0;" id="speciesData">
+				<div id="entryFilmForm" ng-show="action == 1" class="col-md-4" style="width:600px; background-color: #c0c0c0;">
             <film-entry-form></film-entry-form>
 				</div>
 			</div>
