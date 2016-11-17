@@ -47,8 +47,38 @@ $(document).ready(function () {
     };
 
     this.entryFilms = function () {
-      
+      // TODO validate
+
+      var hasError = false;
+      for (var i = 0; i < this.filmsName.length; i++) {
+
+        if (this.filmsName[i] == "") {
+          hasError = true;
+          $("#filmName"+i).parent().addClass('has-error');
+        } else {
+          $("#filmName"+i).parent().removeClass('has-error');
+        }
+
+        if (this.directorsName[i] == "") {
+          hasError = true;
+          $("#filmDirector"+i).parent().addClass('has-error');
+        } else {
+          $("#filmDirector"+i).parent().removeClass('has-error');
+        }
+
+        if (isNaN(this.prices[i]) || this.prices[i] == "" || this.prices[i] <= 0) {
+          hasError = true;
+          $("#price"+i).parent().addClass('has-error');
+        } else {
+          $("#price"+i).parent().removeClass('has-error');
+        }
+      }
+
+      if (!hasError) {
+          window.open("http://proven.cat");
+      }
     };
+
   });
 
   /*
