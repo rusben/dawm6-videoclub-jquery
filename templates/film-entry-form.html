@@ -11,20 +11,20 @@
     </tr>
   </thead>
   <tbody>
-      <tr ng-repeat="i in FilmEntryCtrl.filmsNumber">
+      <tr ng-repeat="i in nFields">
         <td>
-          <input id="filmName" type="text" class="form-control" placeholder="Film name" />
+          <input ng-model="FilmEntryCtrl.filmsName[$index]" id="filmName{{$index}}" type="text" class="form-control" placeholder="Film name" />
         </td>
         <td>
-          <input id="filmDirector" type="text" class="form-control" placeholder="Film director" />
+          <input ng-model="FilmEntryCtrl.directorsName[$index]" id="filmDirector{{$index}}" type="text" class="form-control" placeholder="Film director" />
         </td>
         <td>
-          <input id="price" type="text" class="form-control" placeholder="Price" />
+          <input ng-model="FilmEntryCtrl.prices[$index]" id="price{{$index}}" type="text" class="form-control" placeholder="Price" />
         </td>
         <td>
           <div class="checkbox text-center">
            <label>
-             <input id="available" type="checkbox" />
+             <input ng-model="FilmEntryCtrl.availability[$index]" id="available{{$index}}" type="checkbox" />
            </label>
           </div>
         </td>
@@ -33,4 +33,4 @@
 </table>
 
 <button class="btn btn-default" ng-click="action = 0">Back</button>
-<button class="btn btn-primary">Entry films</button>
+<button class="btn btn-primary" ng-click="FilmEntryCtrl.entryFilms()">Entry films</button>
